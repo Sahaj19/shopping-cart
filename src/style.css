@@ -1,0 +1,150 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+i {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/******** Navbar Styling ********/
+
+nav {
+  background-color: #212529;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav .navbar {
+  color: #fff;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .navbar .cart {
+  background-color: #fff;
+  color: #212529;
+  position: relative;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+nav .navbar .cart i {
+  font-size: 2rem;
+}
+
+nav .navbar .cart .cartQuantity {
+  position: absolute;
+  background-color: red;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 5px;
+  color: #fff;
+  top: -17px;
+  right: -8px;
+}
+
+/******** Product Styling ********/
+
+.productsGrid {
+  margin: 2rem 0;
+}
+
+.productsGrid .products {
+  display: grid;
+  grid-template-columns: repeat(3, 320px);
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 1050px) {
+  .productsGrid .products {
+    grid-template-columns: repeat(2, 320px);
+  }
+
+  nav .navbar {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .productsGrid .products {
+    grid-template-columns: repeat(1, 320px);
+  }
+}
+
+.productsGrid .products .item {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 5px;
+}
+
+.productsGrid .products .item img {
+  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.productsGrid .products .item .details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.productsGrid .products .item .details .price_counter_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productsGrid .products .item .details .price_counter_div .buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+
+/****************************** cart.html Styling ******************************/
+
+.cartPageMainSection {
+  margin: 2rem 0;
+}
+
+.cartPageMainSection .totalAmountDiv {
+  text-align: center;
+}
+
+.cartPageMainSection .totalAmountDiv .emptyCartDiv p {
+  margin: 0.5rem 0;
+}
+
+.cartPageMainSection .totalAmountDiv .emptyCartDiv p a {
+  background-color: #212529;
+  font-size: 0.8rem;
+  padding: 0.25rem;
+  border-radius: 5px;
+}
