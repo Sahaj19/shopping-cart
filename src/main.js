@@ -1,10 +1,19 @@
-const productsBasket = [];
+const productsBasket = JSON.parse(localStorage.getItem("Product-Basket")) || [];
+totalCartItemsCalculator();
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
 const productDetailsDiv = document.querySelector("#productDetailsDiv");
 function generateProductItems() {
     return productDetailsDiv.innerHTML = productDetailsArray.map((productObj) => {
         const { productId , productName, productPrice, productDesc, productImg } = productObj;
+        const productSearch = productsBasket.find((basketItem) => basketItem.productId === productId);
+        let finalProductQuantity;
+        if(!productSearch || productSearch.productCount === undefined) {
+            finalProductQuantity = 0;
+        }else {
+            finalProductQuantity = productSearch.productCount;
+        }
+
         return `
             <div class="productCard">
                 <figure><img src="${productImg}" alt="${productImg}"></figure>
@@ -16,7 +25,7 @@ function generateProductItems() {
                     <p>${productDesc}</p>
                     <div class="buttons">
                         <span><i onclick="decrement('${productId}')" class="bi bi-dash-circle-fill"></i></span>
-                        <span id="${productId}" class="productQuantity">0</span>
+                        <span id="${productId}" class="productQuantity">${finalProductQuantity}</span>
                         <span><i onclick="Increment('${productId}')" class="bi bi-plus-circle-fill"></i></span>
                     </div>
                 </div>
@@ -38,8 +47,7 @@ function Increment(id) {
     }
     console.log(productsBasket);
     update(id);
-    
-
+    localStorage.setItem("Product-Basket", JSON.stringify(productsBasket));
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -53,6 +61,7 @@ function decrement(id) {
     }
     console.log(productsBasket);
     update(id);
+    localStorage.setItem("Product-Basket", JSON.stringify(productsBasket));
 }
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
