@@ -22,14 +22,14 @@ const productDetailsArray = [
     },
     {
       productId: "a4b4",
-      productName: "Mens Suit",
+      productName: "Men's Suit",
       productPrice: 300,
       productDesc: "Elegant men's suit that is great for formal events and special occasions too.",
       productImg: "images/img-4.jpg"
     },
     {
       productId: "a5b5",
-      productName: "Mens Tie",
+      productName: "Men's Tie",
       productPrice: 25,
       productDesc: "This stylish tie will match well with suits and other formal outfits nicely.",
       productImg: "images/img-5.png"
@@ -50,7 +50,7 @@ const productDetailsArray = [
     },
     {
       productId: "a8b8",
-      productName: "Polo Shirt",
+      productName: "Polo T-Shirt",
       productPrice: 45,
       productDesc: "Classic polo shirt that is good for casual events and easy to wear daily.",
       productImg: "images/img-8.png"
