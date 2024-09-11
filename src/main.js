@@ -1,4 +1,4 @@
-const productsBasket = JSON.parse(localStorage.getItem("Product-Basket")) || [];
+let productsBasket = JSON.parse(localStorage.getItem("Product-Basket")) || [];
 totalCartItemsCalculator();
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
@@ -45,8 +45,10 @@ function Increment(id) {
     }else {
         productSearch.productCount += 1;
     }
-    console.log(productsBasket);
     update(id);
+    productsBasket = productsBasket.filter((basketItem) => {
+        return basketItem.productCount !== 0;
+    })
     localStorage.setItem("Product-Basket", JSON.stringify(productsBasket));
 }
 
@@ -59,8 +61,10 @@ function decrement(id) {
     }else {
         productSearch.productCount -= 1;
     }
-    console.log(productsBasket);
     update(id);
+    productsBasket = productsBasket.filter((basketItem) => {
+        return basketItem.productCount !== 0;
+    })
     localStorage.setItem("Product-Basket", JSON.stringify(productsBasket));
 }
 

@@ -8,6 +8,7 @@
 
 a {
   text-decoration: none;
+  color: #fff;
 }
 
 i {
@@ -31,6 +32,9 @@ Navbar Styling
 
 nav {
   background-color: #212529;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav .navbar {
@@ -87,7 +91,7 @@ productsInfoSection Styling (HomePage)
     rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
     rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
     rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    border-radius: 5px;
+  border-radius: 5px;
 }
 
 .productsInfoSection .productDetailsDiv .productCard figure,
@@ -125,7 +129,8 @@ productsInfoSection Styling (HomePage)
   border-radius: 5px;
 }
 
-.productsInfoSection .productDetailsDiv .productCard .details .buttons {
+.productsInfoSection .productDetailsDiv .productCard .details .buttons,
+.shoppingCartSection .shoppingCartDiv .cartItem .details .buttons {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -134,4 +139,140 @@ productsInfoSection Styling (HomePage)
 
 .productsInfoSection .productDetailsDiv .productCard .details .buttons span i {
   font-size: 1.5rem;
+}
+
+/****************************** Checkout Page Styling ******************************/
+
+/*
+Total Billing Section Styling
+*/
+
+.totalBillingSection .totalBillingDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.totalBillingSection .totalBillingDiv .emptyAmountDiv,
+.totalBillingSection .totalBillingDiv .nonEmptyAmountDiv {
+  text-align: center;
+}
+
+.totalBillingSection .totalBillingDiv .emptyAmountDiv span {
+  display: inline-block;
+  color: #fff;
+  background-color: #212529;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 0.75rem;
+}
+
+.totalBillingSection .totalBillingDiv .nonEmptyAmountDiv #clearCartBtn {
+  color: #fff;
+  background-color: #212529;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/*
+Shopping Cart Section Styling
+*/
+
+.shoppingCartSection .shoppingCartDiv {
+  display: grid;
+  grid-template-columns: repeat(1, 350px);
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.shoppingCartSection .shoppingCartDiv .cartItem {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  border-radius: 5px;
+  display: flex;
+}
+
+.shoppingCartSection .shoppingCartDiv .cartItem .imgDiv {
+  flex-basis: 30%;
+}
+
+.shoppingCartSection .shoppingCartDiv .cartItem .details {
+  flex-basis: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.shoppingCartSection .shoppingCartDiv .cartItem .details .name-price-cross {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.shoppingCartSection
+  .shoppingCartDiv
+  .cartItem
+  .details
+  .name-price-cross
+  .productPrice {
+  color: #fff;
+  background-color: #212529;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.shoppingCartSection
+  .shoppingCartDiv
+  .cartItem
+  .details
+  .name-price-cross
+  span {
+  margin-left: auto;
+}
+
+.shoppingCartSection .shoppingCartDiv .cartItem .imgDiv figure,
+.shoppingCartSection .shoppingCartDiv .cartItem .imgDiv figure img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.shoppingCartSection .shoppingCartDiv .cartItem .details .buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.shoppingCartSection .shoppingCartDiv .cartItem .details .buttons span i {
+  font-size: 1.05rem;
+}
+
+/****************************** Responsive Styling ******************************/
+
+@media (max-width: 1025px) {
+  nav .navbar {
+    padding: 2rem;
+  }
+
+  .productsInfoSection .productDetailsDiv {
+    grid-template-columns: repeat(2, 320px);
+  }
+}
+
+@media(max-width:500px) {
+  .productsInfoSection .productDetailsDiv {
+    grid-template-columns: repeat(1, 320px);
+  }
 }
