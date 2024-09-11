@@ -52,7 +52,7 @@ const productDetailsArray = [
       productId: "a8b8",
       productName: "Polo T-Shirt",
       productPrice: 45,
-      productDesc: "Classic polo shirt that is good for casual events and easy to wear daily.",
+      productDesc: "Classic polo T-shirt that is good for casual events and easy to wear daily.",
       productImg: "images/img-8.png"
     },
     {
